@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>docker-commons</artifactId>
+      <version>1.3.1</version>
+    </dependency>
+  </dependencies>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>2.2</version>
+  </parent>
+
+  <artifactId>tenableio-container-security-connector</artifactId>
+  <version>0.0.0-alpha</version>
+  <packaging>hpi</packaging>
+
+  <name>Tenable.io Container Security Connector</name>
+  <description>Provides rapid testing of Docker images for vulnerabilities before they are deployed using Tenable.io Container Security.</description>
+  <url>https://github.com/tenable/tenableio-container-security-connector-plugin</url>
+
+  <licenses>
+    <license>
+      <name>The MIT license</name>
+      <url>https://github.com/tenable/tenableio-container-security-connector-plugin/raw/master/LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>tenable</id>
+      <name>Tenable</name>
+      <email>afung.ctr@tenable.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/tenable/tenableio-container-security-connector-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:tenable/tenableio-container-security-connector-plugin.git</developerConnection>
+    <url>https://github.com/tenable/tenableio-container-security-connector-plugin</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <distributionManagement>
+    <site>
+      <id>github-project-site</id>
+      <url>gitsite:git@github.com/tenable/tenableio-container-security-connector-plugin</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <jenkins.version>1.580.1</jenkins.version>
+    <java.level>6</java.level>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>InjectedTest.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
